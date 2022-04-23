@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div class="CalculatorContainer">
+            <input id="input" type='text' class="justCalculator" />
+            <div class="justcalculator1">
+                <button id=plus>+</button>
+                <button id=minys>-</button>
+                <button id=umnozh>*</button>
+                <button id=delit>/</button>
+                <button id=n1>1</button>
+                <button id=n2>2</button>
+                <button id=n3>3</button>
+                <button id=Clear>Clear</button>
+                <button id=n4>4</button>
+                <button id=n5>5</button>
+                <button id=n6>6</button>
+                <button id=ravno>=</button>
+                <button id=n7>7</button>
+                <button id=n8>8</button>
+                <button id=n9>9</button>
+                <button id=n10>0</button>
+            </div>
+        </div>
+
+    </body>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .justcalculator1 {
+            width: 200px;
+            height: 200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+        }
+        .justCalculator1 > button {
+            font-size: inherit;
+        }
+        
+        .justCalculator {
+            font-size: inherit;
+            width: 200px;
+            height: 50px;
+            padding-left: 17px;
+        }
+        .CalculatorContainer {
+             font-size: 16px;
+             padding: 10px;
+             background-color: rgb(43, 255, 0);
+             padding: solid rgb(251, 255, 5);
+             display: inline-block;
+             border-radius: 15px;
+        }
+    </style>
+    <script>
+        let hashNumber1 = 0
+        let znachenie = ''
+       n1.onclick = () => {
+           input.value += '1'
+       }
+        
+       n2.onclick = () => {
+        input.value += '2'
+       }
+       n3.onclick = () => {
+        input.value += '3'
+       }
+    
+       
+       n4.onclick = () => {
+        input.value += '4'
+       }
+       n5.onclick = () => {
+        input.value += '5'
+       }
+       n6.onclick = () => {
+        input.value += '6'
+       }
+       n7.onclick = () => {
+        input.value += '7'
+       }
+       n8.onclick = () => {
+        input.value += '8'
+       }
+       n9.onclick = () => {
+        input.value += '9'
+       }
+       n10.onclick = () => {
+        input.value += '0'
+       }
+       Clear.onclick = () => {
+           input.value = null 
+           hashNumber1 = 0
+       }
+       plus.onclick = () => {
+           hashNumber1 = Number(input.value)
+           input.value = null
+           znachenie= '+'
+       } 
+       ravno.onclick = () => {
+           if (znachenie === '+') input.value = hashNumber1 + Number(input.value)
+           if (znachenie === '-') input.value = hashNumber1 - Number(input.value)
+           if (znachenie === '*') input.value = hashNumber1 * Number(input.value)
+           if (znachenie === '/') input.value = hashNumber1 / Number(input.value)
+       }
+       minys.onclick = () => {
+           hashNumber1 = Number(input.value)
+           input.value = null
+           znachenie= '-'
+       }
+       umnozh.onclick = () => {
+           hashNumber1 = Number(input.value)
+           input.value = null 
+           znachenie= '*'
+       }
+       delit.onclick = () => {
+           hashNumber1 = Number(input.value)
+           input.value = null 
+           znachenie= '/'
+       }
+
+
+    </script>
+
+    </html>
